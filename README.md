@@ -1,2 +1,2 @@
 # rest-in-tsp
-Java solver for traveling salesman problem with REST interface
+Java solver for traveling salesman problem with REST interface.
