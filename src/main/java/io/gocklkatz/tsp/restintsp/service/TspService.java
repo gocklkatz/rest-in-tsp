@@ -1,6 +1,6 @@
-package io.gocklkatz.tsp.RestInTsp.service;
+package io.gocklkatz.tsp.restintsp.service;
 
-import io.gocklkatz.tsp.RestInTsp.entity.Tsp;
+import io.gocklkatz.tsp.restintsp.entity.Tsp;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

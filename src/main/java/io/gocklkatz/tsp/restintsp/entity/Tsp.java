@@ -1,4 +1,4 @@
-package io.gocklkatz.tsp.RestInTsp.entity;
+package io.gocklkatz.tsp.restintsp.entity;
 
 import java.util.List;
 

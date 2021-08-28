@@ -1,10 +1,10 @@
-package io.gocklkatz.tsp.RestInTsp;
+package io.gocklkatz.tsp.restintsp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RestInTspApplicationTests {
+class SpringApplicationTests {
 
 	@Test
 	void contextLoads() {
