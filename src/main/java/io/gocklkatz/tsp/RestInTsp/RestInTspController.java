@@ -1,23 +1,20 @@
 package io.gocklkatz.tsp.RestInTsp;
 
+import io.gocklkatz.tsp.RestInTsp.entity.Tsp;
+import io.gocklkatz.tsp.RestInTsp.service.TspService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RestInTspController {
 
-    /*
-    /v1/tsp POST: saves new tsp instance and starts computation
-        returns id of tsp instance
-	/v1/tsp/{id}: get result (shortest route, cost)
-        { status: "finished", route: "ABCD", cost: 4 }
-        { status: "computing" }
-        { status: "error", message: "Cost AC missing!" }
-     */
+    @Autowired
+    private TspService service;
 
-    @GetMapping(path = "/tsp")
-    public String getTsp(){
-        return "{ status: 'error', message: 'Not implemented yet!' }";
+    @GetMapping("/tsp/{id}")
+    public Tsp getTsp(@PathVariable int id){
+        return service.findOne(id);
     }
-
 }
