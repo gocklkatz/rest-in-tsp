@@ -17,4 +17,11 @@ public class Controller {
     public Tsp getTsp(@PathVariable int id){
         return service.findOne(id);
     }
+
+    @GetMapping("/tsp/{id}/solve")
+    public Tsp solveTsp(@PathVariable int id){
+        Tsp tsp = service.findOne(id);
+        tsp.solve();
+        return tsp;
+    }
 }

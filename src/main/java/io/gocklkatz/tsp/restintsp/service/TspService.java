@@ -12,12 +12,12 @@ public class TspService {
 
     static {
         List<Integer> distances = new ArrayList<>();
-        distances.add(1);
-        distances.add(4);
-        distances.add(1);
-        distances.add(1);
-        distances.add(7);
-        distances.add(1);
+        distances.add(1); //AB
+        distances.add(4); //AC
+        distances.add(1); //AD
+        distances.add(1); //BC
+        distances.add(7); //BD
+        distances.add(1); //CD
         tsps.add(new Tsp(1, 4, distances));
     }
 

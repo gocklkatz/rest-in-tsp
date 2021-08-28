@@ -6,11 +6,18 @@ public class Tsp {
     private int id;
     private int numberOfCities;
     private List<Integer> distances;
+    private int cost;
+    private String tour;
 
     public Tsp(int id, int numberOfCities, List<Integer> distances) {
         this.id = id;
         this.numberOfCities = numberOfCities;
         this.distances = distances;
+    }
+
+    public void solve(){
+        cost = 4;
+        tour = "ABCD";
     }
 
     public int getId() {
@@ -37,12 +44,30 @@ public class Tsp {
         this.distances = distances;
     }
 
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    public String getTour() {
+        return tour;
+    }
+
+    public void setTour(String tour) {
+        this.tour = tour;
+    }
+
     @Override
     public String toString() {
-        return "TSP{" +
+        return "Tsp{" +
                 "id=" + id +
                 ", numberOfCities=" + numberOfCities +
                 ", distances=" + distances +
+                ", cost=" + cost +
+                ", tour='" + tour + '\'' +
                 '}';
     }
 }
