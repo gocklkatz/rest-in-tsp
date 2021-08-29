@@ -11,14 +11,14 @@ public class TspService {
     private static List<Tsp> tsps = new ArrayList<>();
 
     static {
-        List<Integer> distances = new ArrayList<>();
-        distances.add(1); //AB
-        distances.add(4); //AC
-        distances.add(1); //AD
-        distances.add(1); //BC
-        distances.add(7); //BD
-        distances.add(1); //CD
-        tsps.add(new Tsp(1, 4, distances));
+        int[][] distanceMatrix =  {
+                {0,1,2,3,1},
+                {1,0,5,2,3},
+                {2,5,0,1,3},
+                {3,2,1,0,4},
+                {1,3,3,4,0}
+        };
+        tsps.add(new Tsp(1, 5, distanceMatrix));
     }
 
     public List<Tsp> findAll() {

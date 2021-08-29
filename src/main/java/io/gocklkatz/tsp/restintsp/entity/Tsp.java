@@ -5,19 +5,21 @@ import java.util.List;
 public class Tsp {
     private int id;
     private int numberOfCities;
-    private List<Integer> distances;
+    private int[][] distanceMatrix;
     private int cost;
     private String tour;
 
-    public Tsp(int id, int numberOfCities, List<Integer> distances) {
+    public Tsp(int id, int numberOfCities, int[][] distanceMatrix) {
         this.id = id;
         this.numberOfCities = numberOfCities;
-        this.distances = distances;
+        this.distanceMatrix = distanceMatrix;
     }
 
     public void solve(){
-        cost = 4;
-        tour = "ABCD";
+        Solver solver = new Solver(numberOfCities, distanceMatrix);
+        solver.solve();
+        tour = solver.getTour();
+        cost = solver.getCost();
     }
 
     public int getId() {
@@ -36,12 +38,12 @@ public class Tsp {
         this.numberOfCities = numberOfCities;
     }
 
-    public List<Integer> getDistances() {
-        return distances;
+    public int[][] getDistanceMatrix() {
+        return distanceMatrix;
     }
 
-    public void setDistances(List<Integer> distances) {
-        this.distances = distances;
+    public void setDistanceMatrix(int[][] distanceMatrix) {
+        this.distanceMatrix = distanceMatrix;
     }
 
     public int getCost() {
@@ -65,7 +67,7 @@ public class Tsp {
         return "Tsp{" +
                 "id=" + id +
                 ", numberOfCities=" + numberOfCities +
-                ", distances=" + distances +
+                ", distances=" + distanceMatrix +
                 ", cost=" + cost +
                 ", tour='" + tour + '\'' +
                 '}';
